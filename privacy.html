@@ -60,18 +60,32 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 .controls button {
-    margin-left: 10px;
     padding: 6px 12px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     background: #e5e7eb;
     transition: 0.2s;
+    white-space: nowrap;
 }
 
 .controls button:hover {
     transform: translateY(-1px);
+}
+
+/* ✨ АНИМАЦИЯ КОНТЕНТА */
+#content {
+    transition: all 0.25s ease;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card {
@@ -99,6 +113,19 @@ ul { padding-left: 18px; }
     margin-top: 20px;
     font-size: 13px;
     color: var(--subtext);
+}
+
+/* 📱 mobile fix */
+@media (max-width: 600px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .controls {
+        justify-content: flex-start;
+    }
 }
 </style>
 </head>
@@ -229,8 +256,18 @@ en: `
 };
 
 function setLang(lang) {
-    localStorage.setItem("lang", lang);
-    document.getElementById("content").innerHTML = content[lang];
+    const el = document.getElementById("content");
+
+    el.style.opacity = "0";
+    el.style.transform = "translateY(10px)";
+
+    setTimeout(() => {
+        localStorage.setItem("lang", lang);
+        el.innerHTML = content[lang];
+
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+    }, 200);
 }
 
 function toggleTheme() {
