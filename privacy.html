@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacy Policy | Outside the System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #f7f8fc;
+    --text: #1f2937;
+    --subtext: #6b7280;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --gradient: linear-gradient(90deg, #7c3aed, #f97316);
+}
+
+.dark {
+    --bg: #0b0f19;
+    --text: #e5e7eb;
+    --subtext: #9ca3af;
+    --card: #111827;
+    --border: #1f2937;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 920px;
+    width: 100%;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 22px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.controls button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #e5e7eb;
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    transform: translateY(-1px);
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+h1 { margin: 10px 0; }
+h2 { margin-top: 0; font-size: 18px; }
+p { color: var(--subtext); line-height: 1.6; }
+
+ul { padding-left: 18px; }
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--subtext);
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="container">
+
+<div class="topbar">
+    <div class="logo">Outside the System</div>
+    <div class="controls">
+        <button onclick="setLang('ru')">RU</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="toggleTheme()">🌙</button>
+    </div>
+</div>
+
+<div id="content"></div>
+
+<div class="footer">© Outside the System</div>
+
+</div>
+</div>
+
+<script>
+const content = {
+
+ru: `
+<h1>Политика обработки персональных данных</h1>
+
+<div class="card"><h2>1. Общие положения</h2>
+<p>Политика разработана в соответствии с Федеральным законом РФ №152-ФЗ «О персональных данных».</p></div>
+
+<div class="card"><h2>2. Состав персональных данных</h2>
+<ul>
+<li>Telegram ID</li>
+<li>ФИО</li>
+<li>Username</li>
+<li>Номер телефона</li>
+<li>Действия пользователя</li>
+</ul></div>
+
+<div class="card"><h2>3. Цели обработки (ст. 5 152-ФЗ)</h2>
+<ul>
+<li>Идентификация пользователя</li>
+<li>Работа онлайн-школы</li>
+<li>Связь с пользователем</li>
+<li>Улучшение сервиса</li>
+</ul></div>
+
+<div class="card"><h2>4. Правовые основания (ст. 6 152-ФЗ)</h2>
+<p>Обработка осуществляется на основании согласия пользователя.</p></div>
+
+<div class="card"><h2>5. Условия обработки и хранения (ст. 18.1 152-ФЗ)</h2>
+<p>Данные обрабатываются с соблюдением требований безопасности.</p></div>
+
+<div class="card"><h2>6. Передача третьим лицам</h2>
+<p>Передача не осуществляется, кроме случаев, предусмотренных законом.</p></div>
+
+<div class="card"><h2>7. Срок хранения</h2>
+<p>До достижения целей обработки или отзыва согласия.</p></div>
+
+<div class="card"><h2>8. Права пользователя (ст. 14 152-ФЗ)</h2>
+<ul>
+<li>Получение информации</li>
+<li>Изменение</li>
+<li>Удаление</li>
+<li>Отзыв согласия</li>
+</ul></div>
+
+<div class="card"><h2>9. Отзыв согласия</h2>
+<p>Можно отозвать через контакт ниже.</p></div>
+
+<div class="card"><h2>10. Контакты</h2>
+<p>gameworichel@gmail.com</p></div>
+`,
+
+en: `
+<h1>Privacy Policy</h1>
+
+<div class="card"><h2>1. General</h2>
+<p>This policy complies with GDPR (EU) 2016/679.</p></div>
+
+<div class="card"><h2>2. Data Collected</h2>
+<ul>
+<li>Telegram ID</li>
+<li>Full Name</li>
+<li>Username</li>
+<li>Phone number</li>
+<li>User actions</li>
+</ul></div>
+
+<div class="card"><h2>3. Purpose</h2>
+<ul>
+<li>User identification</li>
+<li>Providing services</li>
+<li>Communication</li>
+<li>Improvement</li>
+</ul></div>
+
+<div class="card"><h2>4. Legal Basis (Art. 6 GDPR)</h2>
+<p>Based on user consent.</p></div>
+
+<div class="card"><h2>5. Storage & Protection</h2>
+<p>Data is protected with appropriate measures.</p></div>
+
+<div class="card"><h2>6. Data Sharing</h2>
+<p>No sharing except legal requirements.</p></div>
+
+<div class="card"><h2>7. Retention</h2>
+<p>Stored until purpose achieved or consent withdrawn.</p></div>
+
+<div class="card"><h2>8. Rights (Art. 15–17 GDPR)</h2>
+<ul>
+<li>Access</li>
+<li>Correction</li>
+<li>Deletion</li>
+<li>Withdraw consent</li>
+</ul></div>
+
+<div class="card"><h2>9. Withdrawal</h2>
+<p>You can withdraw consent anytime.</p></div>
+
+<div class="card"><h2>10. Contact</h2>
+<p>gameworichel@gmail.com</p></div>
+`
+};
+
+function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    document.getElementById("content").innerHTML = content[lang];
+}
+
+function toggleTheme() {
+    const isDark = document.body.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+function initTheme() {
+    const saved = localStorage.getItem("theme");
+
+    if (saved) {
+        if (saved === "dark") document.body.classList.add("dark");
+    } else {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.body.classList.add("dark");
+        }
+    }
+}
+
+initTheme();
+
+const savedLang = localStorage.getItem("lang") || "ru";
+setLang(savedLang);
+</script>
+
+</body>
+</html>
