@@ -81,7 +81,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* ✨ АНИМАЦИЯ КОНТЕНТА */
 #content {
     transition: all 0.25s ease;
     opacity: 1;
@@ -115,7 +114,6 @@ ul { padding-left: 18px; }
     color: var(--subtext);
 }
 
-/* 📱 mobile fix */
 @media (max-width: 600px) {
     .topbar {
         flex-direction: column;
@@ -140,6 +138,8 @@ ul { padding-left: 18px; }
     <div class="controls">
         <button onclick="setLang('ru')">RU</button>
         <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('es')">ES</button>
+        <button onclick="setLang('fr')">FR</button>
         <button onclick="toggleTheme()">🌙</button>
     </div>
 </div>
@@ -169,7 +169,7 @@ ru: `
 <li>Действия пользователя</li>
 </ul></div>
 
-<div class="card"><h2>3. Цели обработки (ст. 5 152-ФЗ)</h2>
+<div class="card"><h2>3. Цели обработки</h2>
 <ul>
 <li>Идентификация пользователя</li>
 <li>Работа онлайн-школы</li>
@@ -177,10 +177,10 @@ ru: `
 <li>Улучшение сервиса</li>
 </ul></div>
 
-<div class="card"><h2>4. Правовые основания (ст. 6 152-ФЗ)</h2>
+<div class="card"><h2>4. Правовые основания</h2>
 <p>Обработка осуществляется на основании согласия пользователя.</p></div>
 
-<div class="card"><h2>5. Условия обработки и хранения (ст. 18.1 152-ФЗ)</h2>
+<div class="card"><h2>5. Условия обработки и хранения</h2>
 <p>Данные обрабатываются с соблюдением требований безопасности.</p></div>
 
 <div class="card"><h2>6. Передача третьим лицам</h2>
@@ -189,19 +189,19 @@ ru: `
 <div class="card"><h2>7. Срок хранения</h2>
 <p>До достижения целей обработки или отзыва согласия.</p></div>
 
-<div class="card"><h2>8. Права пользователя (ст. 14 152-ФЗ)</h2>
+<div class="card"><h2>8. Права пользователя</h2>
 <ul>
 <li>Получение информации</li>
-<li>Изменение</li>
-<li>Удаление</li>
+<li>Изменение данных</li>
+<li>Удаление данных</li>
 <li>Отзыв согласия</li>
 </ul></div>
 
 <div class="card"><h2>9. Отзыв согласия</h2>
-<p>Можно отозвать через контакт ниже.</p></div>
+<p>Согласие можно отозвать, связавшись с нами по указанному ниже адресу.</p></div>
 
 <div class="card"><h2>10. Контакты</h2>
-<p>gameworichel@gmail.com</p></div>
+<p>ots.outsidethesystem@gmail.com</p></div>
 `,
 
 en: `
@@ -213,50 +213,158 @@ en: `
 <div class="card"><h2>2. Data Collected</h2>
 <ul>
 <li>Telegram ID</li>
-<li>Full Name</li>
+<li>Full name</li>
 <li>Username</li>
 <li>Phone number</li>
 <li>User actions</li>
 </ul></div>
 
-<div class="card"><h2>3. Purpose</h2>
+<div class="card"><h2>3. Purposes of Processing</h2>
 <ul>
 <li>User identification</li>
-<li>Providing services</li>
-<li>Communication</li>
-<li>Improvement</li>
+<li>Providing online school services</li>
+<li>Communication with the user</li>
+<li>Service improvement</li>
 </ul></div>
 
-<div class="card"><h2>4. Legal Basis (Art. 6 GDPR)</h2>
-<p>Based on user consent.</p></div>
+<div class="card"><h2>4. Legal Basis</h2>
+<p>Personal data is processed based on the user's consent.</p></div>
 
-<div class="card"><h2>5. Storage & Protection</h2>
-<p>Data is protected with appropriate measures.</p></div>
+<div class="card"><h2>5. Storage and Protection</h2>
+<p>Personal data is stored and protected using appropriate security measures.</p></div>
 
 <div class="card"><h2>6. Data Sharing</h2>
-<p>No sharing except legal requirements.</p></div>
+<p>Personal data is not shared with third parties except where required by law.</p></div>
 
-<div class="card"><h2>7. Retention</h2>
-<p>Stored until purpose achieved or consent withdrawn.</p></div>
+<div class="card"><h2>7. Retention Period</h2>
+<p>Data is stored until the processing purposes are achieved or until consent is withdrawn.</p></div>
 
-<div class="card"><h2>8. Rights (Art. 15–17 GDPR)</h2>
+<div class="card"><h2>8. User Rights</h2>
 <ul>
-<li>Access</li>
-<li>Correction</li>
-<li>Deletion</li>
-<li>Withdraw consent</li>
+<li>Access to personal data</li>
+<li>Correction of personal data</li>
+<li>Deletion of personal data</li>
+<li>Withdrawal of consent</li>
 </ul></div>
 
-<div class="card"><h2>9. Withdrawal</h2>
-<p>You can withdraw consent anytime.</p></div>
+<div class="card"><h2>9. Withdrawal of Consent</h2>
+<p>You may withdraw your consent by contacting us using the email address below.</p></div>
 
 <div class="card"><h2>10. Contact</h2>
-<p>gameworichel@gmail.com</p></div>
+<p>ots.outsidethesystem@gmail.com</p></div>
+`,
+
+es: `
+<h1>Política de Privacidad</h1>
+
+<div class="card"><h2>1. General</h2>
+<p>Esta política cumple con el Reglamento General de Protección de Datos (GDPR/RGPD) de la Unión Europea y con la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD) de España.</p></div>
+
+<div class="card"><h2>2. Datos recopilados</h2>
+<ul>
+<li>ID de Telegram</li>
+<li>Nombre completo</li>
+<li>Nombre de usuario</li>
+<li>Número de teléfono</li>
+<li>Acciones del usuario</li>
+</ul></div>
+
+<div class="card"><h2>3. Finalidad del tratamiento</h2>
+<ul>
+<li>Identificación del usuario</li>
+<li>Funcionamiento de la escuela en línea</li>
+<li>Comunicación con el usuario</li>
+<li>Mejora del servicio</li>
+</ul></div>
+
+<div class="card"><h2>4. Base jurídica</h2>
+<p>El tratamiento se realiza sobre la base del consentimiento del usuario, de acuerdo con el artículo 6 del GDPR.</p></div>
+
+<div class="card"><h2>5. Conservación y protección</h2>
+<p>Los datos personales se almacenan y protegen mediante medidas técnicas y organizativas adecuadas.</p></div>
+
+<div class="card"><h2>6. Cesión de datos</h2>
+<p>Los datos personales no se ceden a terceros, salvo obligación legal.</p></div>
+
+<div class="card"><h2>7. Plazo de conservación</h2>
+<p>Los datos se conservarán hasta que se cumplan las finalidades del tratamiento o hasta que el usuario retire su consentimiento.</p></div>
+
+<div class="card"><h2>8. Derechos del usuario</h2>
+<ul>
+<li>Acceso</li>
+<li>Rectificación</li>
+<li>Supresión</li>
+<li>Limitación del tratamiento</li>
+<li>Oposición</li>
+<li>Portabilidad</li>
+<li>Retirada del consentimiento</li>
+</ul></div>
+
+<div class="card"><h2>9. Retirada del consentimiento</h2>
+<p>El usuario puede retirar su consentimiento en cualquier momento contactando con nosotros.</p></div>
+
+<div class="card"><h2>10. Contacto</h2>
+<p>ots.outsidethesystem@gmail.com</p></div>
+`,
+
+fr: `
+<h1>Politique de Confidentialité</h1>
+
+<div class="card"><h2>1. Généralités</h2>
+<p>Cette politique est conforme au Règlement général sur la protection des données (RGPD/GDPR) de l’Union européenne et à la Loi Informatique et Libertés applicable en France.</p></div>
+
+<div class="card"><h2>2. Données collectées</h2>
+<ul>
+<li>ID Telegram</li>
+<li>Nom complet</li>
+<li>Nom d'utilisateur</li>
+<li>Numéro de téléphone</li>
+<li>Actions de l'utilisateur</li>
+</ul></div>
+
+<div class="card"><h2>3. Finalités du traitement</h2>
+<ul>
+<li>Identification de l'utilisateur</li>
+<li>Fonctionnement de l'école en ligne</li>
+<li>Communication avec l'utilisateur</li>
+<li>Amélioration du service</li>
+</ul></div>
+
+<div class="card"><h2>4. Base légale</h2>
+<p>Le traitement est effectué sur la base du consentement de l'utilisateur, conformément à l'article 6 du RGPD.</p></div>
+
+<div class="card"><h2>5. Conservation et protection</h2>
+<p>Les données personnelles sont conservées et protégées au moyen de mesures techniques et organisationnelles appropriées.</p></div>
+
+<div class="card"><h2>6. Transmission des données</h2>
+<p>Les données personnelles ne sont pas transmises à des tiers, sauf obligation légale.</p></div>
+
+<div class="card"><h2>7. Durée de conservation</h2>
+<p>Les données sont conservées jusqu'à la réalisation des finalités du traitement ou jusqu'au retrait du consentement.</p></div>
+
+<div class="card"><h2>8. Droits de l'utilisateur</h2>
+<ul>
+<li>Droit d'accès</li>
+<li>Droit de rectification</li>
+<li>Droit d'effacement</li>
+<li>Droit à la limitation du traitement</li>
+<li>Droit d'opposition</li>
+<li>Droit à la portabilité</li>
+<li>Retrait du consentement</li>
+</ul></div>
+
+<div class="card"><h2>9. Retrait du consentement</h2>
+<p>L'utilisateur peut retirer son consentement à tout moment en nous contactant.</p></div>
+
+<div class="card"><h2>10. Contact</h2>
+<p>ots.outsidethesystem@gmail.com</p></div>
 `
 };
 
 function setLang(lang) {
     const el = document.getElementById("content");
+
+    document.documentElement.lang = lang;
 
     el.style.opacity = "0";
     el.style.transform = "translateY(10px)";
@@ -278,12 +386,11 @@ function toggleTheme() {
 function initTheme() {
     const saved = localStorage.getItem("theme");
 
-    if (saved) {
-        if (saved === "dark") document.body.classList.add("dark");
+    if (saved === "dark") {
+        document.body.classList.add("dark");
     } else {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.body.classList.add("dark");
-        }
+        document.body.classList.remove("dark");
+        localStorage.setItem("theme", "light");
     }
 }
 
