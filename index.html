@@ -31,7 +31,7 @@ body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: all 0.3s ease;
+    transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 .wrapper {
@@ -73,12 +73,18 @@ body {
     border-radius: 8px;
     cursor: pointer;
     background: #e5e7eb;
-    transition: 0.2s;
+    transition: background-color 0.25s ease, transform 0.2s ease, color 0.25s ease;
     white-space: nowrap;
 }
 
 .controls button:hover {
     transform: translateY(-1px);
+}
+
+.controls button.active {
+    background: var(--gradient);
+    color: white;
+    font-weight: 500;
 }
 
 #content {
@@ -94,6 +100,7 @@ body {
     padding: 24px;
     margin-bottom: 16px;
     animation: fadeIn 0.3s ease;
+    transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
 @keyframes fadeIn {
@@ -125,6 +132,12 @@ ul { padding-left: 18px; }
         justify-content: flex-start;
     }
 }
+
+* {
+    transition-property: background-color, color, border-color, fill, stroke;
+    transition-duration: 0.35s;
+    transition-timing-function: ease;
+}
 </style>
 </head>
 
@@ -140,7 +153,7 @@ ul { padding-left: 18px; }
         <button onclick="setLang('en')">EN</button>
         <button onclick="setLang('es')">ES</button>
         <button onclick="setLang('fr')">FR</button>
-        <button onclick="toggleTheme()">🌙</button>
+        <button id="themeBtn" onclick="toggleTheme()">🌙</button>
     </div>
 </div>
 
@@ -157,206 +170,324 @@ const content = {
 ru: `
 <h1>Политика обработки персональных данных</h1>
 
+<div class="card"><h2>0. Оператор персональных данных</h2>
+<p>
+Оператором персональных данных является Outside the System.<br>
+Контакт: ots.outsidethesystem@gmail.com
+</p></div>
+
 <div class="card"><h2>1. Общие положения</h2>
-<p>Политика разработана в соответствии с Федеральным законом РФ №152-ФЗ «О персональных данных».</p></div>
+<p>
+Настоящая политика разработана в соответствии с требованиями Федерального закона №152-ФЗ «О персональных данных», а также с учетом положений Регламента (ЕС) 2016/679 (GDPR) при обработке данных пользователей из Европейского союза.
+</p></div>
 
 <div class="card"><h2>2. Состав персональных данных</h2>
 <ul>
 <li>Telegram ID</li>
 <li>ФИО</li>
-<li>Username</li>
+<li>Имя пользователя (username)</li>
 <li>Номер телефона</li>
-<li>Действия пользователя</li>
+<li>Действия пользователя в рамках сервиса</li>
 </ul></div>
 
-<div class="card"><h2>3. Цели обработки</h2>
+<div class="card"><h2>3. Цели обработки персональных данных</h2>
 <ul>
 <li>Идентификация пользователя</li>
-<li>Работа онлайн-школы</li>
-<li>Связь с пользователем</li>
-<li>Улучшение сервиса</li>
+<li>Оказание образовательных услуг в онлайн-формате</li>
+<li>Осуществление связи с пользователем</li>
+<li>Повышение качества предоставляемых услуг</li>
 </ul></div>
 
-<div class="card"><h2>4. Правовые основания</h2>
-<p>Обработка осуществляется на основании согласия пользователя.</p></div>
-
-<div class="card"><h2>5. Условия обработки и хранения</h2>
-<p>Данные обрабатываются с соблюдением требований безопасности.</p></div>
-
-<div class="card"><h2>6. Передача третьим лицам</h2>
-<p>Передача не осуществляется, кроме случаев, предусмотренных законом.</p></div>
-
-<div class="card"><h2>7. Срок хранения</h2>
-<p>До достижения целей обработки или отзыва согласия.</p></div>
-
-<div class="card"><h2>8. Права пользователя</h2>
+<div class="card"><h2>4. Правовые основания обработки</h2>
+<p>
+Обработка персональных данных осуществляется на следующих основаниях:
 <ul>
-<li>Получение информации</li>
-<li>Изменение данных</li>
-<li>Удаление данных</li>
-<li>Отзыв согласия</li>
+<li>Согласие субъекта персональных данных</li>
+<li>Исполнение договора или подготовка к его заключению</li>
+<li>Законные интересы оператора, не нарушающие права и свободы субъекта данных</li>
+</ul>
+</p></div>
+
+<div class="card"><h2>5. Хранение и защита данных</h2>
+<p>
+Персональные данные хранятся не дольше, чем это необходимо для достижения целей обработки, если иной срок хранения не установлен законодательством. Оператор применяет необходимые организационные и технические меры для защиты данных.
+</p></div>
+
+<div class="card"><h2>6. Передача персональных данных</h2>
+<p>
+Персональные данные могут обрабатываться третьими лицами (включая провайдеров хостинга и коммуникационные платформы, такие как Telegram) исключительно в целях, указанных в настоящей политике, и в соответствии с действующим законодательством.
+</p></div>
+
+<div class="card"><h2>7. Трансграничная передача данных</h2>
+<p>
+Персональные данные могут передаваться и обрабатываться за пределами страны проживания пользователя. В таких случаях обеспечивается соблюдение требований законодательства и применение соответствующих мер защиты.
+</p></div>
+
+<div class="card"><h2>8. Права субъекта персональных данных</h2>
+<ul>
+<li>Получение информации об обработке персональных данных</li>
+<li>Уточнение, блокирование или удаление данных</li>
+<li>Отзыв согласия на обработку</li>
+<li>Обжалование действий оператора в уполномоченном органе</li>
 </ul></div>
 
 <div class="card"><h2>9. Отзыв согласия</h2>
-<p>Согласие можно отозвать, связавшись с нами по указанному ниже адресу.</p></div>
+<p>
+Пользователь вправе в любой момент отозвать согласие на обработку персональных данных, направив запрос на указанный адрес электронной почты.
+</p></div>
 
-<div class="card"><h2>10. Контакты</h2>
+<div class="card"><h2>10. Автоматизированное принятие решений</h2>
+<p>
+Оператор не осуществляет автоматизированное принятие решений и профилирование, имеющее юридические или аналогичные значимые последствия для пользователя.
+</p></div>
+
+<div class="card"><h2>11. Контакты</h2>
 <p>ots.outsidethesystem@gmail.com</p></div>
 `,
 
 en: `
 <h1>Privacy Policy</h1>
 
-<div class="card"><h2>1. General</h2>
-<p>This policy complies with GDPR (EU) 2016/679.</p></div>
+<div class="card"><h2>0. Data Controller</h2>
+<p>
+The data controller is Outside the System.<br>
+Contact email: ots.outsidethesystem@gmail.com
+</p></div>
 
-<div class="card"><h2>2. Data Collected</h2>
+<div class="card"><h2>1. General Information</h2>
+<p>
+This Privacy Policy complies with Regulation (EU) 2016/679 (General Data Protection Regulation – GDPR) and, where applicable, other relevant data protection laws.
+</p></div>
+
+<div class="card"><h2>2. Personal Data Collected</h2>
 <ul>
 <li>Telegram ID</li>
 <li>Full name</li>
 <li>Username</li>
 <li>Phone number</li>
-<li>User actions</li>
+<li>User actions within the service</li>
 </ul></div>
 
 <div class="card"><h2>3. Purposes of Processing</h2>
 <ul>
 <li>User identification</li>
-<li>Providing online school services</li>
+<li>Provision of online educational services</li>
 <li>Communication with the user</li>
-<li>Service improvement</li>
+<li>Improvement of service quality</li>
 </ul></div>
 
-<div class="card"><h2>4. Legal Basis</h2>
-<p>Personal data is processed based on the user's consent.</p></div>
+<div class="card"><h2>4. Legal Basis for Processing</h2>
+<p>
+Personal data is processed on the following legal bases:
+<ul>
+<li>User consent (Article 6(1)(a) GDPR)</li>
+<li>Performance of a contract or pre-contractual measures (Article 6(1)(b) GDPR)</li>
+<li>Legitimate interests pursued by the controller (Article 6(1)(f) GDPR)</li>
+</ul>
+</p></div>
 
-<div class="card"><h2>5. Storage and Protection</h2>
-<p>Personal data is stored and protected using appropriate security measures.</p></div>
+<div class="card"><h2>5. Data Retention and Security</h2>
+<p>
+Personal data is retained only for as long as necessary to fulfill the purposes described in this policy, unless a longer retention period is required or permitted by law. Appropriate technical and organizational measures are implemented to ensure data security.
+</p></div>
 
 <div class="card"><h2>6. Data Sharing</h2>
-<p>Personal data is not shared with third parties except where required by law.</p></div>
+<p>
+Personal data may be processed by third-party service providers (such as hosting providers and communication platforms, including Telegram), strictly for the purposes described in this policy and in compliance with applicable law.
+</p></div>
 
-<div class="card"><h2>7. Retention Period</h2>
-<p>Data is stored until the processing purposes are achieved or until consent is withdrawn.</p></div>
+<div class="card"><h2>7. International Data Transfers</h2>
+<p>
+Personal data may be transferred to and processed in countries outside the user's country of residence. In such cases, appropriate safeguards are applied in accordance with GDPR requirements.
+</p></div>
 
 <div class="card"><h2>8. User Rights</h2>
 <ul>
-<li>Access to personal data</li>
-<li>Correction of personal data</li>
-<li>Deletion of personal data</li>
-<li>Withdrawal of consent</li>
+<li>Right to access personal data</li>
+<li>Right to rectification</li>
+<li>Right to erasure ("right to be forgotten")</li>
+<li>Right to restriction of processing</li>
+<li>Right to object to processing</li>
+<li>Right to data portability</li>
+<li>Right to withdraw consent</li>
+<li>Right to lodge a complaint with a supervisory authority</li>
 </ul></div>
 
 <div class="card"><h2>9. Withdrawal of Consent</h2>
-<p>You may withdraw your consent by contacting us using the email address below.</p></div>
+<p>
+You may withdraw your consent at any time by contacting the data controller using the email address provided.
+</p></div>
 
-<div class="card"><h2>10. Contact</h2>
+<div class="card"><h2>10. Automated Decision-Making</h2>
+<p>
+We do not use automated decision-making or profiling that produces legal or similarly significant effects.
+</p></div>
+
+<div class="card"><h2>11. Contact</h2>
 <p>ots.outsidethesystem@gmail.com</p></div>
 `,
 
 es: `
 <h1>Política de Privacidad</h1>
 
-<div class="card"><h2>1. General</h2>
-<p>Esta política cumple con el Reglamento General de Protección de Datos (GDPR/RGPD) de la Unión Europea y con la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD) de España.</p></div>
+<div class="card"><h2>0. Responsable del tratamiento</h2>
+<p>
+El responsable del tratamiento de los datos personales es Outside the System.<br>
+Correo electrónico de contacto: ots.outsidethesystem@gmail.com
+</p></div>
 
-<div class="card"><h2>2. Datos recopilados</h2>
+<div class="card"><h2>1. Información general</h2>
+<p>
+La presente política cumple con el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (GDPR/RGPD).
+</p></div>
+
+<div class="card"><h2>2. Datos personales recopilados</h2>
 <ul>
 <li>ID de Telegram</li>
 <li>Nombre completo</li>
 <li>Nombre de usuario</li>
 <li>Número de teléfono</li>
-<li>Acciones del usuario</li>
+<li>Acciones del usuario dentro del servicio</li>
 </ul></div>
 
 <div class="card"><h2>3. Finalidad del tratamiento</h2>
 <ul>
 <li>Identificación del usuario</li>
-<li>Funcionamiento de la escuela en línea</li>
+<li>Prestación de servicios educativos en línea</li>
 <li>Comunicación con el usuario</li>
-<li>Mejora del servicio</li>
+<li>Mejora de la calidad del servicio</li>
 </ul></div>
 
-<div class="card"><h2>4. Base jurídica</h2>
-<p>El tratamiento se realiza sobre la base del consentimiento del usuario, de acuerdo con el artículo 6 del GDPR.</p></div>
+<div class="card"><h2>4. Base jurídica del tratamiento</h2>
+<p>
+El tratamiento de datos personales se basa en:
+<ul>
+<li>El consentimiento del interesado (artículo 6.1.a del RGPD)</li>
+<li>La ejecución de un contrato o la aplicación de medidas precontractuales (artículo 6.1.b del RGPD)</li>
+<li>Los intereses legítimos del responsable del tratamiento (artículo 6.1.f del RGPD)</li>
+</ul>
+</p></div>
 
-<div class="card"><h2>5. Conservación y protección</h2>
-<p>Los datos personales se almacenan y protegen mediante medidas técnicas y organizativas adecuadas.</p></div>
+<div class="card"><h2>5. Conservación y seguridad de los datos</h2>
+<p>
+Los datos personales se conservan únicamente durante el tiempo necesario para cumplir con los fines del tratamiento, salvo que la ley exija o permita un período de conservación más largo. Se aplican medidas técnicas y organizativas apropiadas para garantizar la seguridad de los datos.
+</p></div>
 
-<div class="card"><h2>6. Cesión de datos</h2>
-<p>Los datos personales no se ceden a terceros, salvo obligación legal.</p></div>
+<div class="card"><h2>6. Destinatarios de los datos</h2>
+<p>
+Los datos personales pueden ser tratados por proveedores de servicios externos (como proveedores de alojamiento y plataformas de comunicación, incluido Telegram), exclusivamente para los fines descritos en esta política y de conformidad con la legislación aplicable.
+</p></div>
 
-<div class="card"><h2>7. Plazo de conservación</h2>
-<p>Los datos se conservarán hasta que se cumplan las finalidades del tratamiento o hasta que el usuario retire su consentimiento.</p></div>
+<div class="card"><h2>7. Transferencias internacionales de datos</h2>
+<p>
+Los datos personales pueden transferirse y tratarse fuera del país de residencia del usuario. En tales casos, se aplicarán las garantías adecuadas de conformidad con el RGPD.
+</p></div>
 
 <div class="card"><h2>8. Derechos del usuario</h2>
 <ul>
-<li>Acceso</li>
-<li>Rectificación</li>
-<li>Supresión</li>
-<li>Limitación del tratamiento</li>
-<li>Oposición</li>
-<li>Portabilidad</li>
-<li>Retirada del consentimiento</li>
+<li>Derecho de acceso a los datos personales</li>
+<li>Derecho de rectificación</li>
+<li>Derecho de supresión</li>
+<li>Derecho a la limitación del tratamiento</li>
+<li>Derecho de oposición</li>
+<li>Derecho a la portabilidad de los datos</li>
+<li>Derecho a retirar el consentimiento</li>
+<li>Derecho a presentar una reclamación ante una autoridad de control</li>
 </ul></div>
 
 <div class="card"><h2>9. Retirada del consentimiento</h2>
-<p>El usuario puede retirar su consentimiento en cualquier momento contactando con nosotros.</p></div>
+<p>
+El usuario puede retirar su consentimiento en cualquier momento contactando con el responsable del tratamiento a través del correo electrónico indicado.
+</p></div>
 
-<div class="card"><h2>10. Contacto</h2>
+<div class="card"><h2>10. Decisiones automatizadas</h2>
+<p>
+No se adoptan decisiones automatizadas ni se elaboran perfiles que produzcan efectos jurídicos significativos para el usuario.
+</p></div>
+
+<div class="card"><h2>11. Contacto</h2>
 <p>ots.outsidethesystem@gmail.com</p></div>
 `,
 
 fr: `
 <h1>Politique de Confidentialité</h1>
 
-<div class="card"><h2>1. Généralités</h2>
-<p>Cette politique est conforme au Règlement général sur la protection des données (RGPD/GDPR) de l’Union européenne et à la Loi Informatique et Libertés applicable en France.</p></div>
+<div class="card"><h2>0. Responsable du traitement</h2>
+<p>
+Le responsable du traitement des données personnelles est Outside the System.<br>
+Adresse e-mail de contact : ots.outsidethesystem@gmail.com
+</p></div>
 
-<div class="card"><h2>2. Données collectées</h2>
+<div class="card"><h2>1. Informations générales</h2>
+<p>
+La présente politique est conforme au Règlement (UE) 2016/679 du Parlement européen et du Conseil (RGPD).
+</p></div>
+
+<div class="card"><h2>2. Données personnelles collectées</h2>
 <ul>
-<li>ID Telegram</li>
+<li>Identifiant Telegram</li>
 <li>Nom complet</li>
 <li>Nom d'utilisateur</li>
 <li>Numéro de téléphone</li>
-<li>Actions de l'utilisateur</li>
+<li>Actions de l'utilisateur au sein du service</li>
 </ul></div>
 
 <div class="card"><h2>3. Finalités du traitement</h2>
 <ul>
 <li>Identification de l'utilisateur</li>
-<li>Fonctionnement de l'école en ligne</li>
+<li>Fourniture de services éducatifs en ligne</li>
 <li>Communication avec l'utilisateur</li>
-<li>Amélioration du service</li>
+<li>Amélioration de la qualité du service</li>
 </ul></div>
 
-<div class="card"><h2>4. Base légale</h2>
-<p>Le traitement est effectué sur la base du consentement de l'utilisateur, conformément à l'article 6 du RGPD.</p></div>
+<div class="card"><h2>4. Base légale du traitement</h2>
+<p>
+Le traitement des données personnelles repose sur :
+<ul>
+<li>Le consentement de la personne concernée (article 6.1.a du RGPD)</li>
+<li>L'exécution d'un contrat ou de mesures précontractuelles (article 6.1.b du RGPD)</li>
+<li>L'intérêt légitime du responsable du traitement (article 6.1.f du RGPD)</li>
+</ul>
+</p></div>
 
-<div class="card"><h2>5. Conservation et protection</h2>
-<p>Les données personnelles sont conservées et protégées au moyen de mesures techniques et organisationnelles appropriées.</p></div>
+<div class="card"><h2>5. Conservation et sécurité des données</h2>
+<p>
+Les données personnelles sont conservées uniquement pendant la durée nécessaire à la réalisation des finalités du traitement, sauf obligation légale contraire. Des mesures techniques et organisationnelles appropriées sont mises en œuvre afin de garantir leur sécurité.
+</p></div>
 
-<div class="card"><h2>6. Transmission des données</h2>
-<p>Les données personnelles ne sont pas transmises à des tiers, sauf obligation légale.</p></div>
+<div class="card"><h2>6. Destinataires des données</h2>
+<p>
+Les données personnelles peuvent être traitées par des prestataires de services tiers (tels que les fournisseurs d'hébergement et les plateformes de communication, y compris Telegram), uniquement aux fins décrites dans la présente politique et conformément à la législation applicable.
+</p></div>
 
-<div class="card"><h2>7. Durée de conservation</h2>
-<p>Les données sont conservées jusqu'à la réalisation des finalités du traitement ou jusqu'au retrait du consentement.</p></div>
+<div class="card"><h2>7. Transferts internationaux de données</h2>
+<p>
+Les données personnelles peuvent être transférées et traitées en dehors du pays de résidence de l'utilisateur. Dans ce cas, des garanties appropriées sont mises en place conformément au RGPD.
+</p></div>
 
 <div class="card"><h2>8. Droits de l'utilisateur</h2>
 <ul>
-<li>Droit d'accès</li>
+<li>Droit d'accès aux données personnelles</li>
 <li>Droit de rectification</li>
-<li>Droit d'effacement</li>
+<li>Droit à l'effacement</li>
 <li>Droit à la limitation du traitement</li>
 <li>Droit d'opposition</li>
-<li>Droit à la portabilité</li>
-<li>Retrait du consentement</li>
+<li>Droit à la portabilité des données</li>
+<li>Droit de retirer le consentement</li>
+<li>Droit d'introduire une réclamation auprès d'une autorité de contrôle</li>
 </ul></div>
 
 <div class="card"><h2>9. Retrait du consentement</h2>
-<p>L'utilisateur peut retirer son consentement à tout moment en nous contactant.</p></div>
+<p>
+L'utilisateur peut retirer son consentement à tout moment en contactant le responsable du traitement via l'adresse e-mail indiquée.
+</p></div>
 
-<div class="card"><h2>10. Contact</h2>
+<div class="card"><h2>10. Prise de décision automatisée</h2>
+<p>
+Aucune décision automatisée ni profilage produisant des effets juridiques significatifs n'est mis en œuvre.
+</p></div>
+
+<div class="card"><h2>11. Contact</h2>
 <p>ots.outsidethesystem@gmail.com</p></div>
 `
 };
@@ -373,25 +504,47 @@ function setLang(lang) {
         localStorage.setItem("lang", lang);
         el.innerHTML = content[lang];
 
+        document.querySelectorAll(".controls button").forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        const activeBtn = document.querySelector(`.controls button[onclick="setLang('${lang}')"]`);
+        if (activeBtn) activeBtn.classList.add("active");
+
         el.style.opacity = "1";
         el.style.transform = "translateY(0)";
     }, 200);
 }
 
+function updateThemeIcon(isDark) {
+    const btn = document.getElementById("themeBtn");
+
+    if (btn) {
+        btn.textContent = isDark ? "☀️" : "🌙";
+    }
+}
+
 function toggleTheme() {
     const isDark = document.body.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    updateThemeIcon(isDark);
 }
 
 function initTheme() {
     const saved = localStorage.getItem("theme");
 
+    let isDark = false;
+
     if (saved === "dark") {
         document.body.classList.add("dark");
+        isDark = true;
     } else {
         document.body.classList.remove("dark");
         localStorage.setItem("theme", "light");
     }
+
+    updateThemeIcon(isDark);
 }
 
 initTheme();
