@@ -6,139 +6,479 @@
 
 <title>Privacy Policy | Outside the System</title>
 
-<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<meta name="description" content="Политика обработки персональных данных онлайн-школы Outside the System.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6d25f5">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta property="og:title" content="Privacy Policy | Outside the System">
+<meta property="og:description" content="Политика обработки персональных данных онлайн-школы Outside the System.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Outside the System">
+
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<link rel="apple-touch-icon" href="favicon.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark-start');
+}
+</script>
 
 <style>
-:root {
-    --bg: #f7f8fc;
-    --text: #1f2937;
-    --subtext: #6b7280;
-    --card: #ffffff;
-    --border: #e5e7eb;
-    --gradient: linear-gradient(90deg, #7c3aed, #f97316);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.dark {
-    --bg: #0b0f19;
-    --text: #e5e7eb;
-    --subtext: #9ca3af;
-    --card: #111827;
-    --border: #1f2937;
+:root {
+    --bg: #f7f3ff;
+    --text: #10091f;
+    --muted: #666177;
+    --card: rgba(255, 255, 255, 0.72);
+    --border: rgba(91, 30, 201, 0.18);
+    --purple: #6d25f5;
+    --orange: #ff7a00;
+    --shadow: rgba(91, 30, 201, 0.18);
+    --font-body: 'Inter', Arial, sans-serif;
+    --font-heading: 'Unbounded', 'Inter', Arial, sans-serif;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    background: #05030d;
+    scroll-behavior: smooth;
+}
+
+body.dark,
+html.dark-start body {
+    --bg: #05030d;
+    --text: #f6f1ff;
+    --muted: #b9aecb;
+    --card: rgba(13, 9, 29, 0.72);
+    --border: rgba(255, 122, 0, 0.22);
+    --shadow: rgba(0, 0, 0, 0.45);
 }
 
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
+    font-family: var(--font-body);
+    width: 100%;
+    min-height: 100vh;
     color: var(--text);
-    transition: background-color 0.35s ease, color 0.35s ease;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(125, 0, 255, 0.18), transparent 42%),
+        radial-gradient(circle at bottom right, rgba(255, 122, 0, 0.18), transparent 42%),
+        radial-gradient(circle at 50% 45%, rgba(180, 40, 255, 0.08), transparent 55%),
+        linear-gradient(180deg, #f6f3ff 0%, #ffffff 100%);
+    transition: background 0.6s ease, color 0.6s ease;
+}
+
+body.dark {
+    background:
+        radial-gradient(circle at top left, rgba(140, 0, 255, 0.36), transparent 45%),
+        radial-gradient(circle at bottom right, rgba(255, 98, 0, 0.32), transparent 45%),
+        radial-gradient(circle at 50% 45%, rgba(180, 60, 255, 0.14), transparent 55%),
+        linear-gradient(180deg, #05030d 0%, #070412 45%, #090414 100%);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -120px;
+    height: 320px;
+    pointer-events: none;
+    opacity: 0.85;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.5), transparent 38%),
+        radial-gradient(circle at 80% 50%, rgba(255, 122, 0, 0.42), transparent 38%);
+    filter: blur(90px);
+    z-index: -1;
+}
+
+body.dark::after {
+    opacity: 1;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(160, 60, 255, 0.6), transparent 38%),
+        radial-gradient(circle at 80% 50%, rgba(255, 140, 0, 0.5), transparent 38%);
+}
+
+h1, h2, .brand-text {
+    font-family: var(--font-heading);
 }
 
 .wrapper {
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 0 6% 60px;
 }
 
 .container {
-    max-width: 920px;
+    max-width: 900px;
     width: 100%;
 }
 
-.topbar {
+/* header / brand */
+
+.header {
+    position: relative;
+    padding: 24px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.logo {
-    font-weight: 600;
-    font-size: 22px;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.brand-cube {
+    position: relative;
+    width: 40px;
+    height: 46px;
+    transition: filter 0.35s ease;
+    animation: brandCubeSway 4.5s ease-in-out infinite;
+}
+
+.brand-cube-face {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--purple), var(--orange));
+}
+
+.brand-cube-top {
+    clip-path: polygon(50% 0%, 100% 26%, 50% 52%, 0% 26%);
+    filter: brightness(1.4);
+}
+
+.brand-cube-left {
+    clip-path: polygon(0% 26%, 50% 52%, 50% 100%, 0% 74%);
+    filter: brightness(0.82);
+}
+
+.brand-cube-right {
+    clip-path: polygon(100% 26%, 50% 52%, 50% 100%, 100% 74%);
+    filter: brightness(0.6);
+}
+
+.brand-cube-letter {
+    position: absolute;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 11px;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.brand-cube-letter-top { top: 14%; left: 50%; transform: translate(-50%, 0); }
+.brand-cube-letter-left { top: 64%; left: 25%; transform: translate(-50%, -50%) skewY(30deg); }
+.brand-cube-letter-right { top: 64%; left: 75%; transform: translate(-50%, -50%) skewY(-30deg); }
+
+@keyframes brandCubeSway {
+    0%, 100% { transform: rotate(-6deg) translateY(0); }
+    50% { transform: rotate(6deg) translateY(-2px); }
+}
+
+.brand:hover .brand-cube {
+    filter:
+        drop-shadow(0 0 12px rgba(215, 44, 255, 0.55))
+        drop-shadow(0 0 20px rgba(255, 122, 0, 0.35));
+}
+
+.brand-text {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -0.6px;
 }
 
 .controls {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 12px;
     flex-wrap: wrap;
-    justify-content: flex-end;
 }
 
-.controls button {
-    padding: 6px 12px;
+.lang-switch {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 999px;
+    background: rgba(109, 37, 245, 0.08);
+    border: 1px solid var(--border);
+}
+
+.lang-switch button {
+    padding: 8px 14px;
     border: none;
-    border-radius: 8px;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font-weight: 800;
+    font-size: 13px;
+    font-family: var(--font-body);
     cursor: pointer;
-    background: #e5e7eb;
-    transition: background-color 0.25s ease, transform 0.2s ease, color 0.25s ease;
-    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.controls button:hover {
+.lang-switch button.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--purple), var(--orange));
+    box-shadow: 0 0 18px rgba(109, 37, 245, 0.35);
+}
+
+.theme-btn {
+    position: relative;
+    width: 100px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background:
+        linear-gradient(135deg, rgba(138, 43, 226, 0.22), rgba(255, 122, 0, 0.22)),
+        rgba(10, 7, 25, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(138, 43, 226, 0.35), 0 0 40px rgba(255, 122, 0, 0.22);
+    flex-shrink: 0;
+}
+
+.theme-btn::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7b2cff, #ff7a00);
+    transition: 0.35s ease;
+}
+
+body.dark .theme-btn::before,
+html.dark-start .theme-btn::before {
+    transform: translateX(50px);
+}
+
+html.dark-start .theme-btn::before {
+    transition: none;
+}
+
+.theme-btn span {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+}
+
+.theme-btn svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.theme-btn:hover {
     transform: translateY(-1px);
 }
 
-.controls button.active {
-    background: var(--gradient);
-    color: white;
-    font-weight: 500;
-}
+/* content */
 
 #content {
-    transition: all 0.25s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
     opacity: 1;
     transform: translateY(0);
 }
 
-.card {
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: rgba(109, 37, 245, 0.10);
+    color: var(--purple);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+body.dark .badge { color: #c89bff; }
+
+.badge::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 0 0 12px var(--purple), 0 0 26px rgba(109, 37, 245, 0.55);
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 1.12;
+    letter-spacing: -1.2px;
+    font-weight: 800;
+    max-width: 760px;
+}
+
+.updated {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 28px 0 34px;
+}
+
+.toc a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 6px;
+    border-radius: 999px;
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px;
+    color: var(--text);
+    font-weight: 800;
+    font-size: 13px;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.toc a:hover {
+    color: #ffffff;
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--purple), var(--orange));
+    box-shadow: 0 0 18px rgba(109, 37, 245, 0.35);
+    transform: translateY(-2px);
+}
+
+.card {
+    position: relative;
+    border-radius: 24px;
+    background:
+        linear-gradient(var(--card), var(--card)) padding-box,
+        linear-gradient(135deg, var(--purple), rgba(215, 44, 255, 0.5), var(--orange)) border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 16px 42px var(--shadow);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 26px 28px;
     margin-bottom: 16px;
-    animation: fadeIn 0.3s ease;
-    transition: background-color 0.35s ease, border-color 0.35s ease;
+    scroll-margin-top: 24px;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+.card h2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-h1 { margin: 10px 0; }
-h2 { margin-top: 0; font-size: 18px; }
-p { color: var(--subtext); line-height: 1.6; }
+.sec-num {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #6d25f5, #b53de0 50%, #ff7a00);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(109, 37, 245, 0.3);
+}
 
-ul { padding-left: 18px; }
+.card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.card p + p { margin-top: 10px; }
+
+.card ul {
+    padding-left: 20px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.card a {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+body.dark .card a { color: #c89bff; }
+
+.card a:hover { text-decoration: underline; }
 
 .footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
     font-size: 13px;
-    color: var(--subtext);
+    color: var(--muted);
 }
 
-@media (max-width: 600px) {
-    .topbar {
+.footer a {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+body.dark .footer a { color: #c89bff; }
+
+@media (max-width: 700px) {
+    .header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
     }
 
     .controls {
-        justify-content: flex-start;
+        width: 100%;
+        justify-content: space-between;
     }
-}
 
-* {
-    transition-property: background-color, color, border-color, fill, stroke;
-    transition-duration: 0.35s;
-    transition-timing-function: ease;
+    h1 {
+        font-size: 32px;
+    }
 }
 </style>
 </head>
@@ -148,20 +488,39 @@ ul { padding-left: 18px; }
 <div class="wrapper">
 <div class="container">
 
-<div class="topbar">
-    <div class="logo">Outside the System</div>
+<header class="header">
+    <a href="https://outside-the-system.com/" class="brand" aria-label="На главную страницу Outside the System">
+        <span class="brand-mark" aria-hidden="true">
+            <span class="brand-cube">
+                <span class="brand-cube-face brand-cube-top"></span>
+                <span class="brand-cube-face brand-cube-left"></span>
+                <span class="brand-cube-face brand-cube-right"></span>
+                <span class="brand-cube-letter brand-cube-letter-top">O</span>
+                <span class="brand-cube-letter brand-cube-letter-left">T</span>
+                <span class="brand-cube-letter brand-cube-letter-right">S</span>
+            </span>
+        </span>
+        <span class="brand-text">Outside the System</span>
+    </a>
+
     <div class="controls">
-        <button onclick="setLang('ru')">RU</button>
-        <button onclick="setLang('en')">EN</button>
-        <button onclick="setLang('es')">ES</button>
-        <button onclick="setLang('fr')">FR</button>
-        <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+        <div class="lang-switch" role="group" aria-label="Language">
+            <button onclick="setLang('ru')" data-lang="ru">RU</button>
+            <button onclick="setLang('en')" data-lang="en">EN</button>
+            <button onclick="setLang('es')" data-lang="es">ES</button>
+            <button onclick="setLang('fr')" data-lang="fr">FR</button>
+        </div>
+
+        <button id="themeBtn" class="theme-btn" type="button" aria-label="Переключить тему" onclick="toggleTheme()">
+            <span class="theme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+            <span class="theme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+        </button>
     </div>
-</div>
+</header>
 
-<div id="content"></div>
+<main id="content"></main>
 
-<div class="footer">© Outside the System</div>
+<div class="footer">© 2026 Outside the System — <a href="https://outside-the-system.com/">outside-the-system.com</a></div>
 
 </div>
 </div>
@@ -170,20 +529,35 @@ ul { padding-left: 18px; }
 const content = {
 
 ru: `
+<p class="badge">Политика конфиденциальности</p>
 <h1>Политика обработки персональных данных</h1>
+<p class="updated">Обновлено: 6 сентября 2026</p>
 
-<div class="card"><h2>0. Оператор персональных данных</h2>
-<p>
-Оператором персональных данных является Outside the System.<br>
-Контакт: ots.outsidethesystem@gmail.com
-</p></div>
+<nav class="toc" aria-label="Содержание">
+<a href="#sec-0" title="Оператор персональных данных">0</a>
+<a href="#sec-1" title="Общие положения">1</a>
+<a href="#sec-2" title="Состав персональных данных">2</a>
+<a href="#sec-3" title="Цели обработки">3</a>
+<a href="#sec-4" title="Правовые основания">4</a>
+<a href="#sec-5" title="Хранение и защита данных">5</a>
+<a href="#sec-6" title="Передача персональных данных">6</a>
+<a href="#sec-7" title="Трансграничная передача">7</a>
+<a href="#sec-8" title="Файлы cookie">8</a>
+<a href="#sec-9" title="Возрастные ограничения">9</a>
+<a href="#sec-10" title="Права субъекта">10</a>
+<a href="#sec-11" title="Отзыв согласия">11</a>
+<a href="#sec-12" title="Автоматизированное принятие решений">12</a>
+<a href="#sec-13" title="Изменения политики">13</a>
+<a href="#sec-14" title="Контакты">14</a>
+</nav>
 
-<div class="card"><h2>1. Общие положения</h2>
-<p>
-Настоящая политика разработана в соответствии с требованиями Федерального закона №152-ФЗ «О персональных данных», а также с учетом положений Регламента (ЕС) 2016/679 (GDPR) при обработке данных пользователей из Европейского союза.
-</p></div>
+<div class="card" id="sec-0"><h2><span class="sec-num">0</span>Оператор персональных данных</h2>
+<p>Оператором персональных данных является Outside the System.<br>Контакт: ots.outsidethesystem@gmail.com</p></div>
 
-<div class="card"><h2>2. Состав персональных данных</h2>
+<div class="card" id="sec-1"><h2><span class="sec-num">1</span>Общие положения</h2>
+<p>Настоящая политика разработана в соответствии с требованиями Федерального закона №152-ФЗ «О персональных данных», а также с учетом положений Регламента (ЕС) 2016/679 (GDPR) при обработке данных пользователей из Европейского союза.</p></div>
+
+<div class="card" id="sec-2"><h2><span class="sec-num">2</span>Состав персональных данных</h2>
 <ul>
 <li>Telegram ID</li>
 <li>ФИО</li>
@@ -192,7 +566,7 @@ ru: `
 <li>Действия пользователя в рамках сервиса</li>
 </ul></div>
 
-<div class="card"><h2>3. Цели обработки персональных данных</h2>
+<div class="card" id="sec-3"><h2><span class="sec-num">3</span>Цели обработки персональных данных</h2>
 <ul>
 <li>Идентификация пользователя</li>
 <li>Оказание образовательных услуг в онлайн-формате</li>
@@ -200,32 +574,31 @@ ru: `
 <li>Повышение качества предоставляемых услуг</li>
 </ul></div>
 
-<div class="card"><h2>4. Правовые основания обработки</h2>
-<p>
-Обработка персональных данных осуществляется на следующих основаниях:
+<div class="card" id="sec-4"><h2><span class="sec-num">4</span>Правовые основания обработки</h2>
+<p>Обработка персональных данных осуществляется на следующих основаниях:</p>
 <ul>
 <li>Согласие субъекта персональных данных</li>
 <li>Исполнение договора или подготовка к его заключению</li>
 <li>Законные интересы оператора, не нарушающие права и свободы субъекта данных</li>
-</ul>
-</p></div>
+</ul></div>
 
-<div class="card"><h2>5. Хранение и защита данных</h2>
-<p>
-Персональные данные хранятся не дольше, чем это необходимо для достижения целей обработки, если иной срок хранения не установлен законодательством. Оператор применяет необходимые организационные и технические меры для защиты данных.
-</p></div>
+<div class="card" id="sec-5"><h2><span class="sec-num">5</span>Хранение и защита данных</h2>
+<p>Персональные данные хранятся не дольше, чем это необходимо для достижения целей обработки, если иной срок хранения не установлен законодательством. Оператор применяет необходимые организационные и технические меры для защиты данных.</p></div>
 
-<div class="card"><h2>6. Передача персональных данных</h2>
-<p>
-Персональные данные могут обрабатываться третьими лицами (включая провайдеров хостинга и коммуникационные платформы, такие как Telegram) исключительно в целях, указанных в настоящей политике, и в соответствии с действующим законодательством.
-</p></div>
+<div class="card" id="sec-6"><h2><span class="sec-num">6</span>Передача персональных данных</h2>
+<p>Персональные данные могут обрабатываться третьими лицами (включая провайдеров хостинга и коммуникационные платформы, такие как Telegram) исключительно в целях, указанных в настоящей политике, и в соответствии с действующим законодательством.</p></div>
 
-<div class="card"><h2>7. Трансграничная передача данных</h2>
-<p>
-Персональные данные могут передаваться и обрабатываться за пределами страны проживания пользователя. В таких случаях обеспечивается соблюдение требований законодательства и применение соответствующих мер защиты.
-</p></div>
+<div class="card" id="sec-7"><h2><span class="sec-num">7</span>Трансграничная передача данных</h2>
+<p>Персональные данные могут передаваться и обрабатываться за пределами страны проживания пользователя. В таких случаях обеспечивается соблюдение требований законодательства и применение соответствующих мер защиты.</p></div>
 
-<div class="card"><h2>8. Права субъекта персональных данных</h2>
+<div class="card" id="sec-8"><h2><span class="sec-num">8</span>Файлы cookie и аналогичные технологии</h2>
+<p>Сайт может использовать файлы cookie и локальное хранилище браузера (localStorage) для сохранения технических настроек, таких как выбранный язык интерфейса и тема оформления. Такие данные не используются для рекламного отслеживания и не передаются третьим лицам.</p>
+<p>Пользователь может отключить cookie в настройках браузера, однако это может повлиять на корректную работу сайта.</p></div>
+
+<div class="card" id="sec-9"><h2><span class="sec-num">9</span>Возрастные ограничения</h2>
+<p>Сервис предназначен для лиц старше 18 лет. Если пользователь не достиг совершеннолетия, обработка его персональных данных осуществляется с согласия родителя или законного представителя. При обнаружении факта обработки данных несовершеннолетнего без надлежащего согласия Оператор предпримет меры для их удаления.</p></div>
+
+<div class="card" id="sec-10"><h2><span class="sec-num">10</span>Права субъекта персональных данных</h2>
 <ul>
 <li>Получение информации об обработке персональных данных</li>
 <li>Уточнение, блокирование или удаление данных</li>
@@ -233,35 +606,49 @@ ru: `
 <li>Обжалование действий оператора в уполномоченном органе</li>
 </ul></div>
 
-<div class="card"><h2>9. Отзыв согласия</h2>
-<p>
-Пользователь вправе в любой момент отозвать согласие на обработку персональных данных, направив запрос на указанный адрес электронной почты.
-</p></div>
+<div class="card" id="sec-11"><h2><span class="sec-num">11</span>Отзыв согласия</h2>
+<p>Пользователь вправе в любой момент отозвать согласие на обработку персональных данных, направив запрос на указанный адрес электронной почты.</p></div>
 
-<div class="card"><h2>10. Автоматизированное принятие решений</h2>
-<p>
-Оператор не осуществляет автоматизированное принятие решений и профилирование, имеющее юридические или аналогичные значимые последствия для пользователя.
-</p></div>
+<div class="card" id="sec-12"><h2><span class="sec-num">12</span>Автоматизированное принятие решений</h2>
+<p>Оператор не осуществляет автоматизированное принятие решений и профилирование, имеющее юридические или аналогичные значимые последствия для пользователя.</p></div>
 
-<div class="card"><h2>11. Контакты</h2>
-<p>ots.outsidethesystem@gmail.com</p></div>
+<div class="card" id="sec-13"><h2><span class="sec-num">13</span>Изменения политики</h2>
+<p>Оператор вправе вносить изменения в настоящую политику. Актуальная редакция всегда доступна на данной странице, дата последнего обновления указана в начале документа.</p></div>
+
+<div class="card" id="sec-14"><h2><span class="sec-num">14</span>Контакты</h2>
+<p><a href="mailto:ots.outsidethesystem@gmail.com">ots.outsidethesystem@gmail.com</a></p></div>
 `,
 
 en: `
+<p class="badge">Privacy Policy</p>
 <h1>Privacy Policy</h1>
+<p class="updated">Last updated: September 6, 2026</p>
 
-<div class="card"><h2>0. Data Controller</h2>
-<p>
-The data controller is Outside the System.<br>
-Contact email: ots.outsidethesystem@gmail.com
-</p></div>
+<nav class="toc" aria-label="Table of contents">
+<a href="#sec-0" title="Data Controller">0</a>
+<a href="#sec-1" title="General Information">1</a>
+<a href="#sec-2" title="Personal Data Collected">2</a>
+<a href="#sec-3" title="Purposes of Processing">3</a>
+<a href="#sec-4" title="Legal Basis">4</a>
+<a href="#sec-5" title="Data Retention and Security">5</a>
+<a href="#sec-6" title="Data Sharing">6</a>
+<a href="#sec-7" title="International Data Transfers">7</a>
+<a href="#sec-8" title="Cookies">8</a>
+<a href="#sec-9" title="Age Restrictions">9</a>
+<a href="#sec-10" title="User Rights">10</a>
+<a href="#sec-11" title="Withdrawal of Consent">11</a>
+<a href="#sec-12" title="Automated Decision-Making">12</a>
+<a href="#sec-13" title="Changes to this Policy">13</a>
+<a href="#sec-14" title="Contact">14</a>
+</nav>
 
-<div class="card"><h2>1. General Information</h2>
-<p>
-This Privacy Policy complies with Regulation (EU) 2016/679 (General Data Protection Regulation – GDPR) and, where applicable, other relevant data protection laws.
-</p></div>
+<div class="card" id="sec-0"><h2><span class="sec-num">0</span>Data Controller</h2>
+<p>The data controller is Outside the System.<br>Contact email: ots.outsidethesystem@gmail.com</p></div>
 
-<div class="card"><h2>2. Personal Data Collected</h2>
+<div class="card" id="sec-1"><h2><span class="sec-num">1</span>General Information</h2>
+<p>This Privacy Policy complies with Regulation (EU) 2016/679 (General Data Protection Regulation – GDPR) and, where applicable, other relevant data protection laws.</p></div>
+
+<div class="card" id="sec-2"><h2><span class="sec-num">2</span>Personal Data Collected</h2>
 <ul>
 <li>Telegram ID</li>
 <li>Full name</li>
@@ -270,7 +657,7 @@ This Privacy Policy complies with Regulation (EU) 2016/679 (General Data Protect
 <li>User actions within the service</li>
 </ul></div>
 
-<div class="card"><h2>3. Purposes of Processing</h2>
+<div class="card" id="sec-3"><h2><span class="sec-num">3</span>Purposes of Processing</h2>
 <ul>
 <li>User identification</li>
 <li>Provision of online educational services</li>
@@ -278,32 +665,31 @@ This Privacy Policy complies with Regulation (EU) 2016/679 (General Data Protect
 <li>Improvement of service quality</li>
 </ul></div>
 
-<div class="card"><h2>4. Legal Basis for Processing</h2>
-<p>
-Personal data is processed on the following legal bases:
+<div class="card" id="sec-4"><h2><span class="sec-num">4</span>Legal Basis for Processing</h2>
+<p>Personal data is processed on the following legal bases:</p>
 <ul>
 <li>User consent (Article 6(1)(a) GDPR)</li>
 <li>Performance of a contract or pre-contractual measures (Article 6(1)(b) GDPR)</li>
 <li>Legitimate interests pursued by the controller (Article 6(1)(f) GDPR)</li>
-</ul>
-</p></div>
+</ul></div>
 
-<div class="card"><h2>5. Data Retention and Security</h2>
-<p>
-Personal data is retained only for as long as necessary to fulfill the purposes described in this policy, unless a longer retention period is required or permitted by law. Appropriate technical and organizational measures are implemented to ensure data security.
-</p></div>
+<div class="card" id="sec-5"><h2><span class="sec-num">5</span>Data Retention and Security</h2>
+<p>Personal data is retained only for as long as necessary to fulfill the purposes described in this policy, unless a longer retention period is required or permitted by law. Appropriate technical and organizational measures are implemented to ensure data security.</p></div>
 
-<div class="card"><h2>6. Data Sharing</h2>
-<p>
-Personal data may be processed by third-party service providers (such as hosting providers and communication platforms, including Telegram), strictly for the purposes described in this policy and in compliance with applicable law.
-</p></div>
+<div class="card" id="sec-6"><h2><span class="sec-num">6</span>Data Sharing</h2>
+<p>Personal data may be processed by third-party service providers (such as hosting providers and communication platforms, including Telegram), strictly for the purposes described in this policy and in compliance with applicable law.</p></div>
 
-<div class="card"><h2>7. International Data Transfers</h2>
-<p>
-Personal data may be transferred to and processed in countries outside the user's country of residence. In such cases, appropriate safeguards are applied in accordance with GDPR requirements.
-</p></div>
+<div class="card" id="sec-7"><h2><span class="sec-num">7</span>International Data Transfers</h2>
+<p>Personal data may be transferred to and processed in countries outside the user's country of residence. In such cases, appropriate safeguards are applied in accordance with GDPR requirements.</p></div>
 
-<div class="card"><h2>8. User Rights</h2>
+<div class="card" id="sec-8"><h2><span class="sec-num">8</span>Cookies and Similar Technologies</h2>
+<p>The website may use cookies and browser local storage to save technical settings, such as the selected interface language and color theme. This data is not used for advertising tracking and is not shared with third parties.</p>
+<p>You can disable cookies in your browser settings, although this may affect the website's functionality.</p></div>
+
+<div class="card" id="sec-9"><h2><span class="sec-num">9</span>Age Restrictions</h2>
+<p>The service is intended for users over 18 years of age. If a user has not reached the age of majority, processing of their personal data is carried out with the consent of a parent or legal guardian. If we become aware that we have processed a minor's data without appropriate consent, we will take steps to delete such data.</p></div>
+
+<div class="card" id="sec-10"><h2><span class="sec-num">10</span>User Rights</h2>
 <ul>
 <li>Right to access personal data</li>
 <li>Right to rectification</li>
@@ -315,35 +701,49 @@ Personal data may be transferred to and processed in countries outside the user'
 <li>Right to lodge a complaint with a supervisory authority</li>
 </ul></div>
 
-<div class="card"><h2>9. Withdrawal of Consent</h2>
-<p>
-You may withdraw your consent at any time by contacting the data controller using the email address provided.
-</p></div>
+<div class="card" id="sec-11"><h2><span class="sec-num">11</span>Withdrawal of Consent</h2>
+<p>You may withdraw your consent at any time by contacting the data controller using the email address provided.</p></div>
 
-<div class="card"><h2>10. Automated Decision-Making</h2>
-<p>
-We do not use automated decision-making or profiling that produces legal or similarly significant effects.
-</p></div>
+<div class="card" id="sec-12"><h2><span class="sec-num">12</span>Automated Decision-Making</h2>
+<p>We do not use automated decision-making or profiling that produces legal or similarly significant effects.</p></div>
 
-<div class="card"><h2>11. Contact</h2>
-<p>ots.outsidethesystem@gmail.com</p></div>
+<div class="card" id="sec-13"><h2><span class="sec-num">13</span>Changes to this Policy</h2>
+<p>The data controller may update this Privacy Policy from time to time. The current version is always available on this page, and the date of the last update is indicated at the top of this document.</p></div>
+
+<div class="card" id="sec-14"><h2><span class="sec-num">14</span>Contact</h2>
+<p><a href="mailto:ots.outsidethesystem@gmail.com">ots.outsidethesystem@gmail.com</a></p></div>
 `,
 
 es: `
+<p class="badge">Política de Privacidad</p>
 <h1>Política de Privacidad</h1>
+<p class="updated">Última actualización: 6 de septiembre de 2026</p>
 
-<div class="card"><h2>0. Responsable del tratamiento</h2>
-<p>
-El responsable del tratamiento de los datos personales es Outside the System.<br>
-Correo electrónico de contacto: ots.outsidethesystem@gmail.com
-</p></div>
+<nav class="toc" aria-label="Índice">
+<a href="#sec-0" title="Responsable del tratamiento">0</a>
+<a href="#sec-1" title="Información general">1</a>
+<a href="#sec-2" title="Datos personales recopilados">2</a>
+<a href="#sec-3" title="Finalidad del tratamiento">3</a>
+<a href="#sec-4" title="Base jurídica">4</a>
+<a href="#sec-5" title="Conservación y seguridad">5</a>
+<a href="#sec-6" title="Destinatarios de los datos">6</a>
+<a href="#sec-7" title="Transferencias internacionales">7</a>
+<a href="#sec-8" title="Cookies">8</a>
+<a href="#sec-9" title="Restricciones de edad">9</a>
+<a href="#sec-10" title="Derechos del usuario">10</a>
+<a href="#sec-11" title="Retirada del consentimiento">11</a>
+<a href="#sec-12" title="Decisiones automatizadas">12</a>
+<a href="#sec-13" title="Cambios en esta política">13</a>
+<a href="#sec-14" title="Contacto">14</a>
+</nav>
 
-<div class="card"><h2>1. Información general</h2>
-<p>
-La presente política cumple con el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (GDPR/RGPD).
-</p></div>
+<div class="card" id="sec-0"><h2><span class="sec-num">0</span>Responsable del tratamiento</h2>
+<p>El responsable del tratamiento de los datos personales es Outside the System.<br>Correo electrónico de contacto: ots.outsidethesystem@gmail.com</p></div>
 
-<div class="card"><h2>2. Datos personales recopilados</h2>
+<div class="card" id="sec-1"><h2><span class="sec-num">1</span>Información general</h2>
+<p>La presente política cumple con el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (GDPR/RGPD).</p></div>
+
+<div class="card" id="sec-2"><h2><span class="sec-num">2</span>Datos personales recopilados</h2>
 <ul>
 <li>ID de Telegram</li>
 <li>Nombre completo</li>
@@ -352,7 +752,7 @@ La presente política cumple con el Reglamento (UE) 2016/679 del Parlamento Euro
 <li>Acciones del usuario dentro del servicio</li>
 </ul></div>
 
-<div class="card"><h2>3. Finalidad del tratamiento</h2>
+<div class="card" id="sec-3"><h2><span class="sec-num">3</span>Finalidad del tratamiento</h2>
 <ul>
 <li>Identificación del usuario</li>
 <li>Prestación de servicios educativos en línea</li>
@@ -360,32 +760,31 @@ La presente política cumple con el Reglamento (UE) 2016/679 del Parlamento Euro
 <li>Mejora de la calidad del servicio</li>
 </ul></div>
 
-<div class="card"><h2>4. Base jurídica del tratamiento</h2>
-<p>
-El tratamiento de datos personales se basa en:
+<div class="card" id="sec-4"><h2><span class="sec-num">4</span>Base jurídica del tratamiento</h2>
+<p>El tratamiento de datos personales se basa en:</p>
 <ul>
 <li>El consentimiento del interesado (artículo 6.1.a del RGPD)</li>
 <li>La ejecución de un contrato o la aplicación de medidas precontractuales (artículo 6.1.b del RGPD)</li>
 <li>Los intereses legítimos del responsable del tratamiento (artículo 6.1.f del RGPD)</li>
-</ul>
-</p></div>
+</ul></div>
 
-<div class="card"><h2>5. Conservación y seguridad de los datos</h2>
-<p>
-Los datos personales se conservan únicamente durante el tiempo necesario para cumplir con los fines del tratamiento, salvo que la ley exija o permita un período de conservación más largo. Se aplican medidas técnicas y organizativas apropiadas para garantizar la seguridad de los datos.
-</p></div>
+<div class="card" id="sec-5"><h2><span class="sec-num">5</span>Conservación y seguridad de los datos</h2>
+<p>Los datos personales se conservan únicamente durante el tiempo necesario para cumplir con los fines del tratamiento, salvo que la ley exija o permita un período de conservación más largo. Se aplican medidas técnicas y organizativas apropiadas para garantizar la seguridad de los datos.</p></div>
 
-<div class="card"><h2>6. Destinatarios de los datos</h2>
-<p>
-Los datos personales pueden ser tratados por proveedores de servicios externos (como proveedores de alojamiento y plataformas de comunicación, incluido Telegram), exclusivamente para los fines descritos en esta política y de conformidad con la legislación aplicable.
-</p></div>
+<div class="card" id="sec-6"><h2><span class="sec-num">6</span>Destinatarios de los datos</h2>
+<p>Los datos personales pueden ser tratados por proveedores de servicios externos (como proveedores de alojamiento y plataformas de comunicación, incluido Telegram), exclusivamente para los fines descritos en esta política y de conformidad con la legislación aplicable.</p></div>
 
-<div class="card"><h2>7. Transferencias internacionales de datos</h2>
-<p>
-Los datos personales pueden transferirse y tratarse fuera del país de residencia del usuario. En tales casos, se aplicarán las garantías adecuadas de conformidad con el RGPD.
-</p></div>
+<div class="card" id="sec-7"><h2><span class="sec-num">7</span>Transferencias internacionales de datos</h2>
+<p>Los datos personales pueden transferirse y tratarse fuera del país de residencia del usuario. En tales casos, se aplicarán las garantías adecuadas de conformidad con el RGPD.</p></div>
 
-<div class="card"><h2>8. Derechos del usuario</h2>
+<div class="card" id="sec-8"><h2><span class="sec-num">8</span>Cookies y tecnologías similares</h2>
+<p>El sitio puede utilizar cookies y almacenamiento local del navegador para guardar ajustes técnicos, como el idioma de la interfaz y el tema visual seleccionados. Estos datos no se utilizan para el seguimiento publicitario ni se comparten con terceros.</p>
+<p>Puede desactivar las cookies en la configuración de su navegador, aunque esto puede afectar el funcionamiento del sitio.</p></div>
+
+<div class="card" id="sec-9"><h2><span class="sec-num">9</span>Restricciones de edad</h2>
+<p>El servicio está destinado a personas mayores de 18 años. Si un usuario no ha alcanzado la mayoría de edad, el tratamiento de sus datos personales se realiza con el consentimiento de un padre o tutor legal. Si tenemos conocimiento de que hemos tratado datos de un menor sin el consentimiento adecuado, tomaremos medidas para eliminarlos.</p></div>
+
+<div class="card" id="sec-10"><h2><span class="sec-num">10</span>Derechos del usuario</h2>
 <ul>
 <li>Derecho de acceso a los datos personales</li>
 <li>Derecho de rectificación</li>
@@ -397,35 +796,49 @@ Los datos personales pueden transferirse y tratarse fuera del país de residenci
 <li>Derecho a presentar una reclamación ante una autoridad de control</li>
 </ul></div>
 
-<div class="card"><h2>9. Retirada del consentimiento</h2>
-<p>
-El usuario puede retirar su consentimiento en cualquier momento contactando con el responsable del tratamiento a través del correo electrónico indicado.
-</p></div>
+<div class="card" id="sec-11"><h2><span class="sec-num">11</span>Retirada del consentimiento</h2>
+<p>El usuario puede retirar su consentimiento en cualquier momento contactando con el responsable del tratamiento a través del correo electrónico indicado.</p></div>
 
-<div class="card"><h2>10. Decisiones automatizadas</h2>
-<p>
-No se adoptan decisiones automatizadas ni se elaboran perfiles que produzcan efectos jurídicos significativos para el usuario.
-</p></div>
+<div class="card" id="sec-12"><h2><span class="sec-num">12</span>Decisiones automatizadas</h2>
+<p>No se adoptan decisiones automatizadas ni se elaboran perfiles que produzcan efectos jurídicos significativos para el usuario.</p></div>
 
-<div class="card"><h2>11. Contacto</h2>
-<p>ots.outsidethesystem@gmail.com</p></div>
+<div class="card" id="sec-13"><h2><span class="sec-num">13</span>Cambios en esta política</h2>
+<p>El responsable del tratamiento puede actualizar esta política de privacidad periódicamente. La versión vigente siempre está disponible en esta página, y la fecha de la última actualización se indica al principio del documento.</p></div>
+
+<div class="card" id="sec-14"><h2><span class="sec-num">14</span>Contacto</h2>
+<p><a href="mailto:ots.outsidethesystem@gmail.com">ots.outsidethesystem@gmail.com</a></p></div>
 `,
 
 fr: `
+<p class="badge">Politique de Confidentialité</p>
 <h1>Politique de Confidentialité</h1>
+<p class="updated">Dernière mise à jour : 6 septembre 2026</p>
 
-<div class="card"><h2>0. Responsable du traitement</h2>
-<p>
-Le responsable du traitement des données personnelles est Outside the System.<br>
-Adresse e-mail de contact : ots.outsidethesystem@gmail.com
-</p></div>
+<nav class="toc" aria-label="Table des matières">
+<a href="#sec-0" title="Responsable du traitement">0</a>
+<a href="#sec-1" title="Informations générales">1</a>
+<a href="#sec-2" title="Données personnelles collectées">2</a>
+<a href="#sec-3" title="Finalités du traitement">3</a>
+<a href="#sec-4" title="Base légale">4</a>
+<a href="#sec-5" title="Conservation et sécurité">5</a>
+<a href="#sec-6" title="Destinataires des données">6</a>
+<a href="#sec-7" title="Transferts internationaux">7</a>
+<a href="#sec-8" title="Cookies">8</a>
+<a href="#sec-9" title="Restrictions d'âge">9</a>
+<a href="#sec-10" title="Droits de l'utilisateur">10</a>
+<a href="#sec-11" title="Retrait du consentement">11</a>
+<a href="#sec-12" title="Prise de décision automatisée">12</a>
+<a href="#sec-13" title="Modifications de la présente politique">13</a>
+<a href="#sec-14" title="Contact">14</a>
+</nav>
 
-<div class="card"><h2>1. Informations générales</h2>
-<p>
-La présente politique est conforme au Règlement (UE) 2016/679 du Parlement européen et du Conseil (RGPD).
-</p></div>
+<div class="card" id="sec-0"><h2><span class="sec-num">0</span>Responsable du traitement</h2>
+<p>Le responsable du traitement des données personnelles est Outside the System.<br>Adresse e-mail de contact : ots.outsidethesystem@gmail.com</p></div>
 
-<div class="card"><h2>2. Données personnelles collectées</h2>
+<div class="card" id="sec-1"><h2><span class="sec-num">1</span>Informations générales</h2>
+<p>La présente politique est conforme au Règlement (UE) 2016/679 du Parlement européen et du Conseil (RGPD).</p></div>
+
+<div class="card" id="sec-2"><h2><span class="sec-num">2</span>Données personnelles collectées</h2>
 <ul>
 <li>Identifiant Telegram</li>
 <li>Nom complet</li>
@@ -434,7 +847,7 @@ La présente politique est conforme au Règlement (UE) 2016/679 du Parlement eur
 <li>Actions de l'utilisateur au sein du service</li>
 </ul></div>
 
-<div class="card"><h2>3. Finalités du traitement</h2>
+<div class="card" id="sec-3"><h2><span class="sec-num">3</span>Finalités du traitement</h2>
 <ul>
 <li>Identification de l'utilisateur</li>
 <li>Fourniture de services éducatifs en ligne</li>
@@ -442,32 +855,31 @@ La présente politique est conforme au Règlement (UE) 2016/679 du Parlement eur
 <li>Amélioration de la qualité du service</li>
 </ul></div>
 
-<div class="card"><h2>4. Base légale du traitement</h2>
-<p>
-Le traitement des données personnelles repose sur :
+<div class="card" id="sec-4"><h2><span class="sec-num">4</span>Base légale du traitement</h2>
+<p>Le traitement des données personnelles repose sur :</p>
 <ul>
 <li>Le consentement de la personne concernée (article 6.1.a du RGPD)</li>
 <li>L'exécution d'un contrat ou de mesures précontractuelles (article 6.1.b du RGPD)</li>
 <li>L'intérêt légitime du responsable du traitement (article 6.1.f du RGPD)</li>
-</ul>
-</p></div>
+</ul></div>
 
-<div class="card"><h2>5. Conservation et sécurité des données</h2>
-<p>
-Les données personnelles sont conservées uniquement pendant la durée nécessaire à la réalisation des finalités du traitement, sauf obligation légale contraire. Des mesures techniques et organisationnelles appropriées sont mises en œuvre afin de garantir leur sécurité.
-</p></div>
+<div class="card" id="sec-5"><h2><span class="sec-num">5</span>Conservation et sécurité des données</h2>
+<p>Les données personnelles sont conservées uniquement pendant la durée nécessaire à la réalisation des finalités du traitement, sauf obligation légale contraire. Des mesures techniques et organisationnelles appropriées sont mises en œuvre afin de garantir leur sécurité.</p></div>
 
-<div class="card"><h2>6. Destinataires des données</h2>
-<p>
-Les données personnelles peuvent être traitées par des prestataires de services tiers (tels que les fournisseurs d'hébergement et les plateformes de communication, y compris Telegram), uniquement aux fins décrites dans la présente politique et conformément à la législation applicable.
-</p></div>
+<div class="card" id="sec-6"><h2><span class="sec-num">6</span>Destinataires des données</h2>
+<p>Les données personnelles peuvent être traitées par des prestataires de services tiers (tels que les fournisseurs d'hébergement et les plateformes de communication, y compris Telegram), uniquement aux fins décrites dans la présente politique et conformément à la législation applicable.</p></div>
 
-<div class="card"><h2>7. Transferts internationaux de données</h2>
-<p>
-Les données personnelles peuvent être transférées et traitées en dehors du pays de résidence de l'utilisateur. Dans ce cas, des garanties appropriées sont mises en place conformément au RGPD.
-</p></div>
+<div class="card" id="sec-7"><h2><span class="sec-num">7</span>Transferts internationaux de données</h2>
+<p>Les données personnelles peuvent être transférées et traitées en dehors du pays de résidence de l'utilisateur. Dans ce cas, des garanties appropriées sont mises en place conformément au RGPD.</p></div>
 
-<div class="card"><h2>8. Droits de l'utilisateur</h2>
+<div class="card" id="sec-8"><h2><span class="sec-num">8</span>Cookies et technologies similaires</h2>
+<p>Le site peut utiliser des cookies et le stockage local du navigateur pour enregistrer des paramètres techniques, tels que la langue de l'interface et le thème visuel sélectionnés. Ces données ne sont pas utilisées à des fins de suivi publicitaire et ne sont pas partagées avec des tiers.</p>
+<p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur, ce qui peut toutefois affecter le fonctionnement du site.</p></div>
+
+<div class="card" id="sec-9"><h2><span class="sec-num">9</span>Restrictions d'âge</h2>
+<p>Le service est destiné aux personnes âgées de plus de 18 ans. Si un utilisateur n'a pas atteint la majorité, le traitement de ses données personnelles est effectué avec le consentement d'un parent ou tuteur légal. Si nous apprenons que nous avons traité les données d'un mineur sans consentement approprié, nous prendrons des mesures pour les supprimer.</p></div>
+
+<div class="card" id="sec-10"><h2><span class="sec-num">10</span>Droits de l'utilisateur</h2>
 <ul>
 <li>Droit d'accès aux données personnelles</li>
 <li>Droit de rectification</li>
@@ -479,18 +891,17 @@ Les données personnelles peuvent être transférées et traitées en dehors du 
 <li>Droit d'introduire une réclamation auprès d'une autorité de contrôle</li>
 </ul></div>
 
-<div class="card"><h2>9. Retrait du consentement</h2>
-<p>
-L'utilisateur peut retirer son consentement à tout moment en contactant le responsable du traitement via l'adresse e-mail indiquée.
-</p></div>
+<div class="card" id="sec-11"><h2><span class="sec-num">11</span>Retrait du consentement</h2>
+<p>L'utilisateur peut retirer son consentement à tout moment en contactant le responsable du traitement via l'adresse e-mail indiquée.</p></div>
 
-<div class="card"><h2>10. Prise de décision automatisée</h2>
-<p>
-Aucune décision automatisée ni profilage produisant des effets juridiques significatifs n'est mis en œuvre.
-</p></div>
+<div class="card" id="sec-12"><h2><span class="sec-num">12</span>Prise de décision automatisée</h2>
+<p>Aucune décision automatisée ni profilage produisant des effets juridiques significatifs n'est mis en œuvre.</p></div>
 
-<div class="card"><h2>11. Contact</h2>
-<p>ots.outsidethesystem@gmail.com</p></div>
+<div class="card" id="sec-13"><h2><span class="sec-num">13</span>Modifications de la présente politique</h2>
+<p>Le responsable du traitement peut mettre à jour la présente politique de confidentialité. La version actuelle est toujours disponible sur cette page, et la date de la dernière mise à jour est indiquée en haut du document.</p></div>
+
+<div class="card" id="sec-14"><h2><span class="sec-num">14</span>Contact</h2>
+<p><a href="mailto:ots.outsidethesystem@gmail.com">ots.outsidethesystem@gmail.com</a></p></div>
 `
 };
 
@@ -500,53 +911,34 @@ function setLang(lang) {
     document.documentElement.lang = lang;
 
     el.style.opacity = "0";
-    el.style.transform = "translateY(10px)";
+    el.style.transform = "translateY(8px)";
 
     setTimeout(() => {
         localStorage.setItem("lang", lang);
         el.innerHTML = content[lang];
 
-        document.querySelectorAll(".controls button").forEach(btn => {
-            btn.classList.remove("active");
+        document.querySelectorAll(".lang-switch button").forEach((btn) => {
+            btn.classList.toggle("active", btn.dataset.lang === lang);
         });
-
-        const activeBtn = document.querySelector(`.controls button[onclick="setLang('${lang}')"]`);
-        if (activeBtn) activeBtn.classList.add("active");
 
         el.style.opacity = "1";
         el.style.transform = "translateY(0)";
-    }, 200);
-}
-
-function updateThemeIcon(isDark) {
-    const btn = document.getElementById("themeBtn");
-
-    if (btn) {
-        btn.textContent = isDark ? "☀️" : "🌙";
-    }
+    }, 150);
 }
 
 function toggleTheme() {
     const isDark = document.body.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-
-    updateThemeIcon(isDark);
 }
 
 function initTheme() {
-    const saved = localStorage.getItem("theme");
+    document.documentElement.classList.remove("dark-start");
 
-    let isDark = false;
-
-    if (saved === "dark") {
+    if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark");
-        isDark = true;
     } else {
-        document.body.classList.remove("dark");
         localStorage.setItem("theme", "light");
     }
-
-    updateThemeIcon(isDark);
 }
 
 initTheme();
